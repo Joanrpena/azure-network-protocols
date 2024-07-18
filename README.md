@@ -41,7 +41,17 @@ Within Azure, I created two VMs within the same virtual network to ensure that t
 </br>
  
 <p align="center">
-<img src="" height="70%" width="70%" alt="Azure Networking Steps"/>
+<img src="https://github.com/user-attachments/assets/2c28a40a-2268-4146-a03a-ee487c0dd2e2" height="70%" width="70%" alt="Azure Networking Steps"/>
 </p>
-- IN PROGRESS
+
+- I executed a perpetual ping to the Ubuntu VM for this following step using the command ping -t (IP Adress). Within the Azure portal, I opened up Network Security Groups to create a security rule to deny all incoming ICMP traffic on the Ubuntu VM called DENY_ICMP_FROM_ANYWHERE. I made sure to set my the priority on this security rule lower than 300 to prioritize this rule to take effect before any other rule.
 </br>
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/38d85fc4-b135-49fa-9898-6933e0bf80a0" height="70%" width="70%" alt="Azure Networking Steps"/>
+ <img src="https://github.com/user-attachments/assets/6ffd48cd-cd51-4bef-9a18-3c3cb6e91f4e" height="70%" width="70%" alt="Azure Networking Steps"/>
+</p>
+
+- With the DENY_ICMP_FROM_ANYWHERE rule succesfully enabled, I was able to see the perpetual ping requests start to time out. I deleted the rule I created to block inbound ICMP traffic, and I observed the perpetual ping requests succesfully communicate with the Ubuntu VM once again.
+</br>
+
