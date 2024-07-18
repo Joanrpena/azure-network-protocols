@@ -20,7 +20,7 @@ In this lab, I observe different kinds of network traffic to and from Azure virt
 - Windows 10 Pro (22H2)
 - Ubuntu Server 20.04
 
-<h2>The Set-Up</h2>
+<h2>VM Configuration</h2>
 
 Within Azure, I created two VMs within the same virtual network to ensure that they are able to communicate with each other. One VM will have Windows 10 Pro while the other uses Ubuntu. The Windows VM will connect to the other via the command line/PowerShell. 
 
